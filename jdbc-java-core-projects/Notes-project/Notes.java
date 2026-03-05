@@ -3,12 +3,13 @@ public class Notes {
     static Scanner sc = new Scanner(System.in);
     public void open(){
         System.out.println("Welcome to NOTES");
-        System.out.println("LOBBY : [A]List_Files [B]Read_Files [C]Write_Files");
+        System.out.println("LOBBY : [A]List_Files [B]Read_Files [C]Write_Files [D]Write_Files History");
         System.out.print("Enter your choice : ");
         String enter = sc.nextLine().toUpperCase().trim();
         NoteLister nl = new NoteLister();     
         NoteReader nr = new NoteReader();
         NoteWriter nw = new NoteWriter();
+        WriterHistory wh = new WriterHistory();
         if(enter.equals("A")){
             nl.listFolders();
         }
@@ -16,7 +17,11 @@ public class Notes {
             nr.readFiles();
         }
         else if(enter.equals("C")){
-            nw.writeFiles();
+            String fileName = nw.writeFiles();
+            wh.writerHistoryUpdater(fileName);
+        }
+        else if(enter.equals("D")){
+            wh.writerHistoryPrinter();
         }
         else{
             System.out.println("invalid inpot....ErrOr..ErRor.erRor...!");

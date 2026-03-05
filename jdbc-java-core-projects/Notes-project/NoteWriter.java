@@ -6,7 +6,7 @@ import java.io.IOException;
 public class NoteWriter {
     static Scanner sc = new Scanner(System.in);
     StringBuilder stringStore = new StringBuilder();
-    public void writeFiles(){
+    public String writeFiles(){
         System.out.println("Enter Your File Name : ");
         String name = sc.nextLine();
         File file = new File("/data/data/com.termux/files/home/storage/shared/fbi-folder/generics/notes/"+name);
@@ -32,6 +32,6 @@ public class NoteWriter {
         catch(IOException e){
             System.out.println("Something went Wrong");
         }
-        sc.close();
+        return name;
     }
 }
