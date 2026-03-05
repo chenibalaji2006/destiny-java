@@ -7,8 +7,8 @@ import java.io.FileReader;
 public class NoteReader {
     static Scanner sc = new Scanner(System.in);
     public void readFiles(){
-        String enter = sc.nextLine();
-        File file  = new File("/data/data/com.termux/files/home/storage/shared/fbi-folder/generics/notes/"+enter);
+        String name = sc.nextLine();
+        File file  = new File("/data/data/com.termux/files/home/storage/shared/fbi-folder/generics/notes/"+name);
         try(BufferedReader reader = new BufferedReader(new FileReader(file))){
                 String line;
                 while((line = reader.readLine()) != null){
