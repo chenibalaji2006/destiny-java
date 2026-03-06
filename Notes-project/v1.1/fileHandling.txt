@@ -1,0 +1,90 @@
+Exceptions(common) :
+FileNotFoundException
+IOException
+
+Some useful commands :
+file.exists();        // true if file or folder exists
+file.isFile();        // true only if it's a file
+file.isDirectory();   // true only if it's a folder
+file.canRead();       // permission check
+file.canWrite();      // permission check
+
+
+File class(files & folder info) :
+file.getName()        // returns String (file name only)
+file.getPath()        // returns String (path used to create file)
+file.getAbsolutePath()// returns String (full system path)
+file.length()         // returns long (file size in bytes)
+file.exists()         // returns boolean
+file.isFile()         // returns boolean
+file.isDirectory()    // returns boolean
+file.canRead()        // returns boolean
+file.canWrite()       // returns boolean
+file.canExecute()     // returns boolean
+file.createNewFile()  // returns boolean (creates file)
+file.delete()         // returns boolean (deletes file)
+file.mkdir()          // returns boolean (create single folder)
+file.mkdirs()         // returns boolean (create nested folders)
+file.list()           // returns String[] (names inside folder)
+file.listFiles()      // returns File[] (files inside folder)
+file.renameTo(newFile)// returns boolean (rename file)
+
+
+FileWriter :
+new FileWriter("file.txt")          // overwrite mode
+new FileWriter("file.txt", true)    // append mode
+
+writer.write(String)                // write text
+writer.write(int)                   // write single character
+writer.flush()                      // force write immediately
+writer.close()                      // close stream
+
+FileReader :
+new FileReader("file.txt")
+
+reader.read()        // returns int (character ASCII)
+reader.close()
+
+BufferedWriter :
+new BufferedWriter(new FileWriter("file.txt"))
+
+writer.write(String)
+writer.newLine()
+writer.flush()
+writer.close()
+
+BufferedReader :
+new BufferedReader(new FileReader("file.txt"))
+
+reader.readLine()    // returns String
+reader.ready()       // returns boolean
+reader.close()
+
+PrintWriter :
+new PrintWriter("file.txt")
+
+writer.print()
+writer.println()
+writer.printf()
+writer.close()
+
+FileInputStream :
+new FileInputStream("file.dat")
+
+stream.read()        // returns int (byte)
+stream.close()
+
+FileOutPutStream :
+new FileOutputStream("file.dat")
+new FileOutputStream("file.dat", true) // append
+
+stream.write(int)
+stream.close()
+
+ModrenWayAdvanced :
+Files.readAllLines(Path)
+Files.write(Path, List<String>)
+Files.exists(Path)
+Files.createFile(Path)
+Files.delete(Path)
+Files.list(Path)
